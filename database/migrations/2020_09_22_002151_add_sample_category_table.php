@@ -17,7 +17,7 @@ class AddSampleCategoryTable extends Migration
             $table->bigIncrements('id');
             $table->string('listing_id');
             $table->string('category_id');
-            $table->string('view_flag');
+            $table->string('view_flag')->nullable()->default('0');
             $table->timestamps();
         });
     }
