@@ -51,8 +51,6 @@ class CreateUsersTable extends Migration
             $table->string('apiid')->nullable();
             $table->string('created')->nullable();
             $table->string('modified')->nullable();
-            $table->string('created_at')->nullable();
-            $table->string('updated_at')->nullable();
             $table->timestamps();
         });
     }
