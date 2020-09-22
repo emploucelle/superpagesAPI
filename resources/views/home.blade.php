@@ -11,6 +11,11 @@
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
+<?php
+$user = Auth::user():
+$api_token  = $user->api_token;
+echo $api_token;
+ ?>
                         </div>
                     @endif
 
