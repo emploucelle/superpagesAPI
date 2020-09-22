@@ -83,18 +83,18 @@ return [
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
-        ], */
+        ], */  
 
-	'pgsql' => array(
+	'pgsql' => [
         'driver'   => 'pgsql',
         'host'     => $host,
         'database' => $database,
         'username' => $username,
         'password' => $password,
-        'charset'  => 'utf8mb4',
+        'charset'  => 'utf8',
         'prefix'   => '',
         'schema'   => 'public',
-   	 ),
+   	 ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
