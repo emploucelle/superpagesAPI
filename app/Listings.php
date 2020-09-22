@@ -10,8 +10,8 @@ class Listings extends Authenticatable
 {
     use Notifiable;
 
-    // protected $table = 'listings';
-    protected $table = 'testing_table';
+    protected $table = 'listings';
+    //protected $table = 'testing_table';
 
     protected $fillable = [
         'name',
