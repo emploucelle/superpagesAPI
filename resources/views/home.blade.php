@@ -16,12 +16,13 @@
                     @endif
 
                     You are logged in!
+	<br><br>
+	Token: 
 
 			<?php
 $user = Auth::user();
 $api_token  = $user->api_token;
 echo $api_token;
-echo "testing"; 
  ?>
 
                 </div>
