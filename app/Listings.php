@@ -108,6 +108,26 @@ class Listings extends Authenticatable
         return $this->hasOne('App\Users', 'id', 'user_id');
     }
 
+    public function states(){
+        return $this->hasOne('App\States', 'id', 'state_id');
+    }
+
+    public function cities(){
+        return $this->hasOne('App\Cities', 'id', 'citie_id');
+    }
+
+    public function listing_workinghours(){
+        return $this->hasOne('App\Listing_workinghours', 'listing_id', 'id');
+    }
+
+    public function listing_pays(){
+        return $this->hasOne('App\Listing_pays', 'listing_id', 'id');
+    }
+
+    public function listing_images(){
+        return $this->hasOne('App\Listing_images', 'listing_id', 'id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

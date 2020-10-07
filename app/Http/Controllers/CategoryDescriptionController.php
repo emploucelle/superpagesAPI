@@ -25,7 +25,7 @@ class CategoryDescriptionController extends Controller
  
     public function show($id)
     {
-        return CategoryDesc::find($id);
+        return CategoryDesc::find($id); 
     }
 
     public function store(Request $request)
