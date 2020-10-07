@@ -15,9 +15,9 @@ class CreateListingPaysTable extends Migration
     {
         Schema::create('listing_pays', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('listing_id')->nullable()->default('');
-            $table->integer('listing_payment_id')->nullable()->default('');
-            $table->integer('view_flag')->nullable()->default('0');
+            $table->string('listing_id')->nullable()->default('');
+            $table->string('listing_payment_id')->nullable()->default('');
+            $table->string('view_flag')->nullable()->default('0');
             $table->timestamps();
         });
     }

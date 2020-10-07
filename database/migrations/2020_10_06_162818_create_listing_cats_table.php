@@ -15,9 +15,9 @@ class CreateListingCatsTable extends Migration
     {
         Schema::create('listing_cats', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('listing_id')->nullable()->default('');
-            $table->integer('listing_category_id')->nullable()->default('');
-            $table->integer('view_flag')->nullable()->default('');
+            $table->string('listing_id')->nullable()->default('');
+            $table->string('listing_category_id')->nullable()->default('');
+            $table->string('view_flag')->nullable()->default('');
             $table->timestamps();
         });
     }

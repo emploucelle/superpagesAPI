@@ -17,11 +17,11 @@ class CreateListingPaymentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->nullable()->default('');
             $table->string('image')->nullable()->default('');
-            $table->integer('status')->nullable()->default('');
+            $table->string('status')->nullable()->default('');
             $table->string('slug')->nullable()->default('');
             $table->string('created')->nullable()->default('');
             $table->string('modified')->nullable()->default('');
-            $table->integer('view_flag')->nullable()->default('0');
+            $table->string('view_flag')->nullable()->default('0');
             $table->timestamps();
         });
     }
