@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 // $password = $url["pass"];
 // $database = substr($url["path"], 1);
 
+$DATABASE_URL = parse_url('postgres://hetkxjvmdhjgal:715bc01ef6cf5078a312e16808ef3bd7ff52e535933abe21a386d17877fd41b5@ec2-52-20-160-44.compute-1.amazonaws.com:5432/d29amttdf0ej5');
+
 return [
 
     /*
@@ -22,7 +24,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,20 +72,33 @@ return [
             ]) : [],
         ],
 
-         'pgsql' => [
+        //  'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'port' => env('DB_PORT', '5432'),
+        //     'database' => env('DB_DATABASE', 'forge'),
+        //     'username' => env('DB_USERNAME', 'forge'),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ], 
+
+        'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
+            'database' => ltrim($DATABASE_URL["path"], "/"),
+            'username' => $DATABASE_URL["user"],
+            'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
             'schema' => 'public',
-            'sslmode' => 'prefer',
-        ], 
+            'sslmode' => 'require',
+        ],
 
 	// 'pgsql' => [
     //     'driver'   => 'pgsql',
